@@ -12,7 +12,7 @@ export class MyMCP extends McpAgent {
 	async init() {
 		// Simple addition tool
 		this.server.tool(
-			"add",
+			"add_add",
 			{ a: z.number(), b: z.number() },
 			async ({ a, b }) => ({
 				content: [{ type: "text", text: String(a + b) }],
@@ -21,7 +21,7 @@ export class MyMCP extends McpAgent {
 
 		// Calculator tool with multiple operations
 		this.server.tool(
-			"calculate",
+			"calculate_calculate",
 			{
 				operation: z.enum(["add", "subtract", "multiply", "divide"]),
 				a: z.number(),
